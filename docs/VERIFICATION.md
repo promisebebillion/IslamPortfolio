@@ -54,3 +54,12 @@ Screenshots are in `output/screenshots`. Static deployment is not performed. HTT
 - Biography, contacts and CV remain readable on the 390-pixel viewport. No horizontal overflow was found on the CV. Physical iOS/Safari and Android devices were not tested.
 - Production build passes. 21st review reports no errors or warnings; the changed SelectMenu component has no findings. Browser console has no errors or warnings. Unslop review found no further actionable issues in this small change; the layout effect synchronizes DOM geometry and cleans up its browser listeners.
 - Evidence: `output/screenshots/responsive-mobile-hero.jpg`, `responsive-mobile-gallery.jpg`, `responsive-mobile-comparison.jpg` and `responsive-landscape-menu.jpg`.
+
+## Hero overlap and text motion — 10 October 2026
+
+- Constrained the hero media group to 410px on desktop, 330px below 1100px and 290px below 800px. The existing phone layout and 48px space above the media group remain. Side frames now overlap the central frame even on a wide screen.
+- Added one-time viewport reveals for hero text, section headings, introductory copy, capability summaries and the contact heading. The browser's Web Animations API handles a 620ms opacity/20px lift with 60–120ms delays; there is no animation library or per-scroll React state.
+- Content remains visible by default. Reduced-motion preferences skip animation setup, and turning reduced motion on cancels running reveals. Observer, preference listener and running animations are cleaned up on unmount.
+- Checked 1920 × 1080, 1440 × 1000, 390 × 844 and 320 × 700 in the browser. No horizontal overflow. Confirmed the first heading starts at opacity 0 / 20px vertical translation and finishes at opacity 1 / no transform; navigation and gallery headings remain readable. Browser console contains no errors or warnings.
+- Production build passes; 21st review reports no errors or warnings. Unslop review of the animation hook found no further actionable issues: the effect synchronizes browser visibility and animation APIs only.
+- Evidence: `output/screenshots/hero-overlap-desktop.jpg` and `hero-overlap-mobile.jpg`. Physical-device and reduced-motion emulation were not performed; reduced-motion behavior was checked in source.

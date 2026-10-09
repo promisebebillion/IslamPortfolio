@@ -69,7 +69,9 @@
     "Experimental outline signature in the hero; original bold wordmark retained as requested",
     "Custom keyboard-operated client and quality menus",
     "Unmodified Adobe product icons from the official Adobe website",
-    "Native scrollbars use a rounded chartreuse thumb on a dark track; mobile hero cards have a 48-pixel top margin"
+    "Native scrollbars use a rounded chartreuse thumb on a dark track; mobile hero cards have a 48-pixel top margin",
+    "Hero media group has a bounded width at each breakpoint so its three frames overlap on wide screens",
+    "Text reveals once on entering the viewport with a 620ms fade and 20px lift, short stagger delays, and reduced-motion opt-out"
   ],
   "evidence": [],
   "generatedAt": "2026-10-09T15:00:12.381Z"

@@ -23,7 +23,7 @@ export default function WorkGallery({ onOpen }: { onOpen: (project: Project, com
 
   return (
     <section id="work" className="work-section section-padding" aria-labelledby="work-title">
-      <div className="section-heading"><div><p className="section-kicker">The portfolio</p><h2 id="work-title">Selected <span>work.</span></h2></div><p className="section-intro">Different brands. Different stories.<br />One thing in common: every cut counts.</p></div>
+      <div className="section-heading"><div><p className="section-kicker" data-reveal>The portfolio</p><h2 id="work-title" data-reveal data-reveal-delay="60">Selected <span>work.</span></h2></div><p className="section-intro" data-reveal data-reveal-delay="120">Different brands. Different stories.<br />One thing in common: every cut counts.</p></div>
       <div className="work-filters"><div className="category-tabs" aria-label="Filter work by category">{categories.map(item => <button key={item.value} className={category === item.value ? 'active' : ''} aria-pressed={category === item.value} onClick={() => { setCategory(item.value); setClient('all'); }}>{item.label}<span>{item.value === 'all' ? projects.length : projects.filter(p => p.category === item.value).length}</span></button>)}</div>
         <div className="client-filter"><SlidersHorizontal size={14} aria-hidden="true" /><SelectMenu label="Filter by client" value={client} options={clientOptions} onChange={value => { setClient(value); setCategory('all'); }} /></div>
       </div>
