@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "project": {
+    "name": "islam-dubaev-portfolio",
+    "productType": "Video editor and motion designer portfolio",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Lucide"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/styles.css"
+    ],
+    "components": [],
+    "assets": [
+      "public/media",
+      "src/media.json"
+    ],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "dark with a light biography section",
+    "colors": {
+      "line": "#333936",
+      "ink": "#101212",
+      "muted": "#9ba39f",
+      "paper": "#f2f2e9",
+      "accent": "#d7ff3f"
+    },
+    "typography": {
+      "interface": "Manrope",
+      "headings": "Instrument Serif",
+      "fonts": "Self-hosted Latin subsets"
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "Editorial, spacious"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [
+      "Label named clients accurately",
+      "Preserve video proportions",
+      "Load full videos on demand",
+      "Respect reduced motion",
+      "Readable mobile layout"
+    ],
+    "avoid": [
+      "Invented clients, awards, testimonials",
+      "Apple Style represented as Apple client",
+      "Rasul portrait represented as Islam"
+    ]
+  },
+  "decisions": [
+    "Cinematic triptych with actual portfolio footage",
+    "Expressive serif headlines and oversized sans-serif name",
+    "Four before/after pairs",
+    "Native dialog and custom video controls",
+    "Client-supplied open-stroke DUBAEV glyphs in a stacked square logo; green and white transparent exports",
+    "Experimental outline signature in the hero; original bold wordmark retained as requested",
+    "Custom keyboard-operated client and quality menus",
+    "Unmodified Adobe product icons from the official Adobe website",
+    "Native scrollbars use a rounded chartreuse thumb on a dark track; mobile hero cards have a 48-pixel top margin"
+  ],
+  "evidence": [],
+  "generatedAt": "2026-10-09T15:00:12.381Z"
+}

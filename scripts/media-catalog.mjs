@@ -1,0 +1,20 @@
+export const catalog = [
+  { id: 'tff', file: 'TFF - 2.1.mp4', title: 'TFF Global Investment', category: 'commercial', format: 'Real estate film', client: 'TFF Global Investment', description: 'A Dubai real estate video edited for TFF Global Investment.' },
+  { id: 'academy', file: 'Trainig 1 - 2.mp4', title: '971 MMA & Fitness Academy', category: 'commercial', format: 'Fitness film', client: '971 MMA & Fitness Academy', description: 'Video editing for 971 MMA & Fitness Academy.' },
+  { id: 'tooba', file: 'Tooba1.mp4', title: 'Tooba Help Easy', category: 'commercial', format: 'Social campaign', client: 'Tooba Help Easy', description: 'Video editing for Tooba Help Easy.' },
+  { id: 'base', file: 'theBASE1.mp4', title: 'The Base', category: 'commercial', format: 'Product campaign', client: 'The Base', description: 'A drinks campaign edited for The Base.' },
+  { id: 'rasul-6', file: 'Rasul6.mp4', before: 'Rasul6 ДО.mp4', title: 'Rasul Abdulla / 01', category: 'expert', format: 'Expert reel', client: 'Rasul Abdulla', description: 'An expert video with a source-footage comparison.', profile: 'https://www.instagram.com/justrasul/' },
+  { id: 'rasul-8', file: 'Rasul8.mp4', before: 'Rasul8 ДО.mp4', title: 'Rasul Abdulla / 02', category: 'expert', format: 'Expert reel', client: 'Rasul Abdulla', description: 'A second expert video with a source-footage comparison.', profile: 'https://www.instagram.com/justrasul/' },
+  { id: 'apple-style', file: 'Apple Style После.mp4', before: 'Apple Style До.mp4', title: 'Apple Style', category: 'creative', format: 'Before & after', description: 'An Apple-inspired editing style. Compare the source footage with the finished edit.' },
+  { id: 'ei', file: 'ЕИ После.mp4', before: 'ЕИ До.mp4', title: 'Expert edit', category: 'expert', format: 'Before & after', description: 'Source footage and a finished talking-head edit.' },
+  { id: 'speedramp', file: 'Speedramp.mp4', title: 'Speed ramp', category: 'creative', format: 'Editing study', description: 'An editing example focused on changes in speed and pacing.' },
+  { id: 'product', file: 'NewVideo1 Final.mp4', title: 'Language learning', category: 'expert', format: 'Expert reel', description: 'A talking-head edit about learning languages, with animated text and pacing for social media.' },
+  { id: 'eventer', file: 'Eventer 5.mp4', title: 'Eventer', category: 'commercial', format: 'Promotional video', description: 'A promotional editing example from the selected portfolio.' },
+  { id: 'optics', file: 'BJ optics Dark.mp4', title: 'BG Optics', category: 'motion', format: 'Brand animation', description: 'Motion design and animated brand graphics.' },
+  { id: 'sharylife', file: 'Amin LED SHARYLIFE.mp4', title: 'Zharyk Life', category: 'motion', format: 'LED animation', description: 'Animated product graphics designed for an LED display.' },
+  { id: 'led', file: 'LED Anim.mp4', title: 'LED / Motion', category: 'motion', format: 'LED animation', description: 'Graphic animation for an LED display.' },
+  { id: 'ferrostil', file: 'Anim LED Ferrostil.mp4', title: 'Ferrostil', category: 'motion', format: 'LED animation', description: 'An animated identity for an LED display.' },
+  { id: 'stroimontazh', file: 'Amin LED StroiMontazh.mp4', title: 'StroiMontazh', category: 'motion', format: 'LED animation', description: 'Graphic motion for an LED display.' },
+  { id: 'altao', file: 'Анимация Altao PP.mp4', title: 'Altao PP', category: 'motion', format: 'App animation', description: 'Motion graphics introducing the Altao shopping app.' },
+];
+
