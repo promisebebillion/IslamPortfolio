@@ -1,3 +1,4 @@
+import { useLanguage } from './Language';
 import { useEffect, useRef, useState } from 'react';
 import { Maximize, Minimize, Pause, Play, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { formatTime, type Project } from './projects';
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export default function VideoPlayer({ project, quality, mode }: Props) {
+  const { t } = useLanguage();
   const video = useRef<HTMLVideoElement>(null);
   const before = useRef<HTMLVideoElement>(null);
   const container = useRef<HTMLDivElement>(null);
@@ -111,14 +113,14 @@ export default function VideoPlayer({ project, quality, mode }: Props) {
       <div className="player-stage">
         {mode === 'compare' && (
           <div className="video-pane">
-            <span className="pane-label">Before / source footage</span>
+            <span className="pane-label">{t("Before / source footage")}</span>
             <video ref={before} src={beforeSrc} poster={project.beforePoster} muted playsInline preload="metadata"
               onError={() => setFailed(true)} onWaiting={() => setLoading(true)}
               onCanPlay={() => { setLoading(false); resumeBefore(); }} />
           </div>
         )}
         <div className="video-pane">
-          {mode === 'compare' && <span className="pane-label after-label">After / finished edit</span>}
+          {mode === 'compare' && <span className="pane-label after-label">{t("After / finished edit")}</span>}
           <video ref={video} src={src} poster={isSource ? project.beforePoster : project.poster}
             playsInline preload="metadata" onClick={() => void togglePlay()}
             onLoadedMetadata={event => setDuration(event.currentTarget.duration)}
@@ -130,21 +132,21 @@ export default function VideoPlayer({ project, quality, mode }: Props) {
             onVolumeChange={event => { setMuted(event.currentTarget.muted); setVolume(event.currentTarget.volume); }}
             onError={() => { setFailed(true); setLoading(false); }} />
         </div>
-        {!playing && !failed && <button className="stage-play" onClick={() => void togglePlay()} aria-label="Play video"><Play size={30} fill="currentColor" /></button>}
-        {loading && !failed && <div className="loading-indicator" role="status">Loading video<span /></div>}
-        {failed && <div className="player-error" role="alert"><p>This video couldn’t be played.</p><button onClick={() => { video.current?.load(); before.current?.load(); setFailed(false); }}>Try again</button><a href={src}>Open video directly</a></div>}
+        {!playing && !failed && <button className="stage-play" onClick={() => void togglePlay()} aria-label={t("Play video")}><Play size={30} fill="currentColor" /></button>}
+        {loading && !failed && <div className="loading-indicator" role="status">{t("Loading video")}<span /></div>}
+        {failed && <div className="player-error" role="alert"><p>{t("This video couldn’t be played.")}</p><button onClick={() => { video.current?.load(); before.current?.load(); setFailed(false); }}>{t("Try again")}</button><a href={src}>{t("Open video directly")}</a></div>}
       </div>
       <div className="player-controls">
-        <button onClick={() => void togglePlay()} aria-label={playing ? 'Pause video' : 'Play video'}>{playing ? <Pause size={19} /> : <Play size={19} />}</button>
-        <button onClick={() => seek(0)} aria-label="Restart video"><RotateCcw size={17} /></button>
+        <button onClick={() => void togglePlay()} aria-label={t(playing ? 'Pause video' : 'Play video')}>{playing ? <Pause size={19} /> : <Play size={19} />}</button>
+        <button onClick={() => seek(0)} aria-label={t("Restart video")}><RotateCcw size={17} /></button>
         <span className="player-time">{formatTime(time)}</span>
-        <input className="seek-bar" type="range" min={0} max={duration} step={0.1} value={time} aria-label="Video progress" onChange={event => seek(Number(event.target.value))} style={{ background: `linear-gradient(to right, var(--accent) ${duration ? time / duration * 100 : 0}%, var(--player-track) 0)` }} />
+        <input className="seek-bar" type="range" min={0} max={duration} step={0.1} value={time} aria-label={t("Video progress")} onChange={event => seek(Number(event.target.value))} style={{ background: `linear-gradient(to right, var(--accent) ${duration ? time / duration * 100 : 0}%, var(--player-track) 0)` }} />
         <span className="player-time">{formatTime(duration)}</span>
-        <button onClick={toggleMute} aria-label={muted ? 'Unmute video' : 'Mute video'}>{muted ? <VolumeX size={19} /> : <Volume2 size={19} />}</button>
-        <input className="volume-bar" type="range" min={0} max={1} step={0.05} value={muted ? 0 : volume} aria-label="Volume" onChange={event => { if (video.current) { video.current.volume = Number(event.target.value); video.current.muted = false; } }} />
-        <button onClick={() => void toggleFullscreen()} aria-label={fullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}>{fullscreen ? <Minimize size={19} /> : <Maximize size={19} />}</button>
+        <button onClick={toggleMute} aria-label={t(muted ? 'Unmute video' : 'Mute video')}>{muted ? <VolumeX size={19} /> : <Volume2 size={19} />}</button>
+        <input className="volume-bar" type="range" min={0} max={1} step={0.05} value={muted ? 0 : volume} aria-label={t("Volume")} onChange={event => { if (video.current) { video.current.volume = Number(event.target.value); video.current.muted = false; } }} />
+        <button onClick={() => void toggleFullscreen()} aria-label={t(fullscreen ? 'Exit fullscreen' : 'Enter fullscreen')}>{fullscreen ? <Minimize size={19} /> : <Maximize size={19} />}</button>
       </div>
-      {mode === 'compare' && <p className="comparison-note">Shared playback. Audio from the finished edit. Editing may change the timing.</p>}
+      {mode === 'compare' && <p className="comparison-note">{t("Shared playback. Audio from the finished edit. Editing may change the timing.")}</p>}
     </div>
   );
 }

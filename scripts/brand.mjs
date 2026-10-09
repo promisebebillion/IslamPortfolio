@@ -31,19 +31,18 @@ function svg(content, width, height, color, stroke = 2.8) {
 }
 
 for (const [name, color] of [['green','#d7ff3f'], ['white','#ffffff']]) {
-  const mark = svg(paths('DUB',23,28,16)+paths('AEV',23,140,12),240,240,color);
+  const mark = svg(paths('DUBAEV',4,4,54),622,80,color);
   await writeFile(`${directory}/dubaev-${name}.svg`, mark);
-  await writeFile(`${directory}/dubaev-${name}.png`, new Resvg(mark,{fitTo:{mode:'width',value:1024}}).render().asPng());
-  const horizontal = svg(paths('DUBAEV',4,4,54),622,80,color);
-  await writeFile(`${directory}/dubaev-horizontal-${name}.svg`, horizontal);
-  await writeFile(`${directory}/dubaev-horizontal-${name}.png`, new Resvg(horizontal,{fitTo:{mode:'width',value:2048}}).render().asPng());
+  await writeFile(`${directory}/dubaev-${name}.png`, new Resvg(mark,{fitTo:{mode:'width',value:2048}}).render().asPng());
+  await writeFile(`${directory}/dubaev-horizontal-${name}.svg`, mark);
+  await writeFile(`${directory}/dubaev-horizontal-${name}.png`, new Resvg(mark,{fitTo:{mode:'width',value:2048}}).render().asPng());
 }
 
 const signature = svg(paths('ISLAM',4,7,35)+paths('DUBAEV',435,7,35),995,86,'#f2f2e9',2.8);
 await writeFile(`${directory}/islam-dubaev-signature.svg`,signature);
-const compact = svg(paths('DUB',23,28,16)+paths('AEV',23,140,12),240,240,'#d7ff3f',4.2);
+const compact = svg(paths('DUBAEV',4,4,54),622,80,'#d7ff3f',2.8);
 await writeFile(`${directory}/dubaev-compact.svg`,compact);
-const favicon = svg(paths('DUB',23,28,16)+paths('AEV',23,140,12),240,240,'#d7ff3f',7);
+const favicon = svg(paths('DUBAEV',14,274,54),642,642,'#d7ff3f',7);
 await writeFile('public/favicon.svg',favicon);
 for (const size of [32,64,180]) {
   await writeFile(`public/favicon-${size}.png`,new Resvg(favicon,{fitTo:{mode:'width',value:size}}).render().asPng());

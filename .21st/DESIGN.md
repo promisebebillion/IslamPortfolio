@@ -1,6 +1,6 @@
 # Islam Dubaev — design context
 
-English recruitment portfolio for a video editor and motion designer. React, TypeScript and Vite with native dialog/video elements and Lucide icons.
+English-first recruitment portfolio with an EN/RU switch. React, TypeScript, Vite, Tailwind utilities and Motion with native dialog/video elements and Lucide icons.
 
 The user selected cinematic layering from Jason Bergh, expressive oversized type from Danik Bartolini and the green graphic identity of Artem Shcherbakov. The site uses the client's real footage.
 
@@ -10,4 +10,6 @@ Hero triptych, image-only work gallery, four paired comparisons, light biography
 
 Company attribution follows the supplied correspondence. Apple Style describes an editing style. Rasul Abdulla is a client. No invented awards, claims or testimonials.
 
-Brand update: stacked DUB / AEV logo traced as paths from the user reference. Transparent green/white PNGs and SVGs; compact strokes for the header and favicon. Trial outline hero signature, with the prior bold version retained for rollback. Custom client/quality menus and official Adobe software icons.
+Brand update: horizontal, unbroken DUBAEV logo traced as paths from the user reference. Transparent green/white PNGs and SVGs; horizontal header and favicon. Trial outline hero signature, with the prior bold version retained for rollback. Custom client/quality menus and official Adobe software icons.
+
+The biography pairs the client's supplied mountain portrait with the introduction on warm paper, stacking on phones. Russian headings use Georgia for Cyrillic coverage; interface copy uses self-hosted Manrope Latin/Cyrillic. A subtle FloatingPathsBackground appears only behind the hero and shares the pause/reduced-motion behavior.

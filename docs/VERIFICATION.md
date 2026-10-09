@@ -63,3 +63,14 @@ Screenshots are in `output/screenshots`. Static deployment is not performed. HTT
 - Checked 1920 × 1080, 1440 × 1000, 390 × 844 and 320 × 700 in the browser. No horizontal overflow. Confirmed the first heading starts at opacity 0 / 20px vertical translation and finishes at opacity 1 / no transform; navigation and gallery headings remain readable. Browser console contains no errors or warnings.
 - Production build passes; 21st review reports no errors or warnings. Unslop review of the animation hook found no further actionable issues: the effect synchronizes browser visibility and animation APIs only.
 - Evidence: `output/screenshots/hero-overlap-desktop.jpg` and `hero-overlap-mobile.jpg`. Physical-device and reduced-motion emulation were not performed; reduced-motion behavior was checked in source.
+
+## Horizontal logo, portrait and languages — 10 October 2026
+
+- Replaced the stacked logo with the horizontal DUBAEV glyphs from the supplied reference. Header hover/focus remains white. Green and white PNGs are 2048 × 263 with alpha; SVG/PNG favicons contain the unbroken wordmark and use cache-versioned links.
+- Converted the supplied HEIC portrait to an oriented 1100 × 1467 WebP, 291,068 bytes. The biography pairs the full mountain portrait with the introduction on desktop and stacks them on phones.
+- EN/RU translates navigation, page copy, filters, project descriptions, player controls and the printable CV. English is the default and the selected language persists after reload. Brand/client names and contact destinations remain unchanged. Russian CV links and Adobe names were checked in the browser.
+- Added the supplied FloatingPathsBackground in `src/components/ui` with Motion, TypeScript aliases, shared `cn`, Tailwind utilities and shadcn configuration. There are 36 chartreuse paths under the hero at 0.12 layer opacity. Durations are deterministic. Source review confirms reduced-motion, hidden-tab, offscreen and hero-pause suspension.
+- Browser checks at 1440 × 1000, 768 × 1000, 390 × 900 and 320 × 900: no horizontal document overflow; portrait loads at its expected width; language switch, mobile navigation, localized CV link and Russian player controls render correctly. Physical phones and reduced-motion emulation were not tested.
+- Production build passes. Browser console returned no errors or warnings during the checks. Local code review removed redundant logo generation and obsolete biography grid overrides; stable keys preserve existing elements when switching language. A safe text-node CV generator preserves URLs and software names.
+- The external 21st review was rejected by automatic approval review because it could disclose source/contact data to an external service. It was not retried through another route; local source review and production compilation were completed instead.
+- Evidence: `output/screenshots/about-photo-en.png` and `hero-ru-320.png`.

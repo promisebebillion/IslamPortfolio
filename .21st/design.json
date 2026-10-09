@@ -7,17 +7,23 @@
       "React",
       "TypeScript",
       "Vite",
-      "Lucide"
+      "Lucide",
+      "Tailwind CSS",
+      "Motion"
     ]
   },
   "sources": {
     "tokens": [
       "src/styles.css"
     ],
-    "components": [],
+    "components": [
+      "src/components/ui"
+    ],
     "assets": [
       "public/media",
-      "src/media.json"
+      "src/media.json",
+      "public/me.webp",
+      "public/brand"
     ],
     "instructions": []
   },
@@ -33,7 +39,7 @@
     "typography": {
       "interface": "Manrope",
       "headings": "Instrument Serif",
-      "fonts": "Self-hosted Latin subsets"
+      "fonts": "Self-hosted Manrope Latin/Cyrillic and Instrument Serif Latin; Georgia for Russian headlines"
     },
     "spacing": {},
     "radius": {},
@@ -65,13 +71,16 @@
     "Expressive serif headlines and oversized sans-serif name",
     "Four before/after pairs",
     "Native dialog and custom video controls",
-    "Client-supplied open-stroke DUBAEV glyphs in a stacked square logo; green and white transparent exports",
+    "Client-supplied open-stroke DUBAEV glyphs in an unbroken horizontal logo; green and white transparent exports",
     "Experimental outline signature in the hero; original bold wordmark retained as requested",
     "Custom keyboard-operated client and quality menus",
     "Unmodified Adobe product icons from the official Adobe website",
     "Native scrollbars use a rounded chartreuse thumb on a dark track; mobile hero cards have a 48-pixel top margin",
     "Hero media group has a bounded width at each breakpoint so its three frames overlap on wide screens",
-    "Text reveals once on entering the viewport with a 620ms fade and 20px lift, short stagger delays, and reduced-motion opt-out"
+    "Text reveals once on entering the viewport with a 620ms fade and 20px lift, short stagger delays, and reduced-motion opt-out",
+    "English-first EN/RU interface with a persistent language choice and localized printable CV",
+    "Client-supplied portrait in the biography, converted from HEIC to WebP",
+    "Subtle FloatingPathsBackground behind the hero with deterministic durations and reduced-motion/visibility/pause controls"
   ],
   "evidence": [],
   "generatedAt": "2026-10-09T15:00:12.381Z"

@@ -1,6 +1,6 @@
 # Islam Dubaev — video portfolio
 
-React + TypeScript + Vite. English portfolio for a video editor and motion designer, built around the supplied videos and CV.
+React + TypeScript + Vite, with Tailwind CSS and shadcn-compatible aliases. English-first portfolio with an EN/RU switch, built around the supplied videos, portrait and CV.
 
 ## Run locally
 
@@ -44,8 +44,18 @@ The player interaction was informed by the [21st Video Player by Preet Suthar](h
 
 ## Brand assets and menu update
 
-`npm run brand:prepare` regenerates the vector path artwork, transparent 1024 × 1024 logo PNGs, horizontal variants and favicons. Files are in `public/brand`; green and white exports are included. The header uses the compact vector for legibility at small sizes and turns white on hover or keyboard focus.
+`npm run brand:prepare` regenerates the horizontal DUBAEV path artwork, transparent 2048-pixel-wide logo PNGs and favicons. Files are in `public/brand`; green and white exports are included. The header uses the horizontal vector and turns white on hover or keyboard focus. The favicon contains the same unbroken wordmark.
 
 The trial outline name is in `src/Hero.tsx`. The previous bold wordmark is preserved in the adjacent JSX comment at the user's explicit request; its existing CSS remains. Restore that line and remove the signature image to return to the old treatment.
 
 Adobe app icons are stored locally; their official source links are recorded in `public/icons/SOURCES.md`. Client filtering and quality selection share `SelectMenu`, with arrow keys, Home/End, Enter, Escape, focus restoration and outside-click dismissal.
+
+## Languages, portrait and background
+
+English is the default; EN/RU stores the visitor's choice locally and translates page copy, filters, project descriptions and player controls. Company names and software names remain unchanged. Translations live in `src/translations.ts`; `npm run cv:prepare` regenerates `public/cv-ru.html` from the English CV without changing links or brand names. This script requires Node 22.18+ for TypeScript stripping.
+
+`npm run portrait:prepare` converts the supplied `public/me.HEIC` to the displayed `public/me.webp` (1100 × 1467). The biography uses the real portrait with its mountain setting.
+
+The supplied FloatingPathsBackground is in `src/components/ui/floating-paths.tsx`, with a separate example component. It uses `motion`, muted chartreuse strokes and deterministic animation durations. Motion pauses outside the viewport, in a hidden tab, with the hero pause button and for reduced-motion preferences.
+
+Reusable UI lives in `src/components/ui`, resolved as `@/components/ui`; shared utilities are in `src/lib`. `components.json`, the Vite alias and TypeScript paths support shadcn components. Tailwind's theme and utilities are enabled in `src/styles.css`; its reset is omitted to preserve the existing design. Add a future component using `npx shadcn@latest add <component>` and review its styles against the current tokens.
