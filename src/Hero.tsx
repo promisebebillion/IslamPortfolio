@@ -1,7 +1,6 @@
 import { useLanguage } from './Language';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Pause, Play } from 'lucide-react';
-import { FloatingPathsBackground } from '@/components/ui/floating-paths';
 
 function Preview({ id, active }: { id: string; active: boolean }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -9,7 +8,7 @@ function Preview({ id, active }: { id: string; active: boolean }) {
     if (active) void ref.current?.play().catch(() => { /* The poster remains visible when autoplay is unavailable. */ });
     else ref.current?.pause();
   }, [active]);
-  return <video ref={ref} src={active ? `/media/${id}-preview.mp4` : undefined} poster={`/media/${id}.webp`} muted loop playsInline preload="none" aria-hidden="true" />;
+  return <video ref={ref} src={`/media/${id}-preview.mp4`} poster={`/media/${id}.webp`} muted loop playsInline preload="none" aria-hidden="true" />;
 }
 
 export default function Hero({ modalOpen, onWatch }: { modalOpen: boolean; onWatch: () => void }) {
@@ -29,7 +28,6 @@ export default function Hero({ modalOpen, onWatch }: { modalOpen: boolean; onWat
   const active = motion && visible && !modalOpen;
 
   return (
-    <FloatingPathsBackground position={-1} className="hero-background" active={active}>
     <section className="hero" ref={section} aria-labelledby="hero-title">
       <div className="hero-topline"><p>{t("Video editor & motion designer")}</p><p>{t("Almaty, Kazakhstan")} <span className="location-dot" /></p></div>
       <div className="hero-composition">
@@ -51,7 +49,6 @@ export default function Hero({ modalOpen, onWatch }: { modalOpen: boolean; onWat
       <div className="hero-wordmark" aria-label={t("Islam Dubaev")}>ISLAM DUBAEV<span className="cut-mark" aria-hidden="true" /></div>
       */}
     </section>
-    </FloatingPathsBackground>
   );
 }
 

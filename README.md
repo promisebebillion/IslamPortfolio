@@ -50,12 +50,12 @@ The trial outline name is in `src/Hero.tsx`. The previous bold wordmark is prese
 
 Adobe app icons are stored locally; their official source links are recorded in `public/icons/SOURCES.md`. Client filtering and quality selection share `SelectMenu`, with arrow keys, Home/End, Enter, Escape, focus restoration and outside-click dismissal.
 
-## Languages, portrait and background
+## Languages and portrait
 
 English is the default; EN/RU stores the visitor's choice locally and translates page copy, filters, project descriptions and player controls. Company names and software names remain unchanged. Translations live in `src/translations.ts`; `npm run cv:prepare` regenerates `public/cv-ru.html` from the English CV without changing links or brand names. This script requires Node 22.18+ for TypeScript stripping.
 
 `npm run portrait:prepare` converts the supplied `public/me.HEIC` to the displayed `public/me.webp` (1100 × 1467). The biography uses the real portrait with its mountain setting.
 
-The supplied FloatingPathsBackground is in `src/components/ui/floating-paths.tsx`, with a separate example component. It uses `motion`, muted chartreuse strokes and deterministic animation durations. Motion pauses outside the viewport, in a hidden tab, with the hero pause button and for reduced-motion preferences.
+The animated SVG hero background was removed following a reported slowdown when returning from the bottom of the page. Hero previews now retain their video sources while paused offscreen, so returning to the hero resumes playback without unloading and reloading the files. Text reveals remain one-time viewport animations.
 
-Reusable UI lives in `src/components/ui`, resolved as `@/components/ui`; shared utilities are in `src/lib`. `components.json`, the Vite alias and TypeScript paths support shadcn components. Tailwind's theme and utilities are enabled in `src/styles.css`; its reset is omitted to preserve the existing design. Add a future component using `npx shadcn@latest add <component>` and review its styles against the current tokens.
+The configured path for future reusable UI is `src/components/ui`, resolved as `@/components/ui`; shared utilities are in `src/lib`. `components.json`, the Vite alias and TypeScript paths support shadcn components. Tailwind's theme and utilities are enabled in `src/styles.css`; its reset is omitted to preserve the existing design. Add a future component using `npx shadcn@latest add <component>` and review its styles against the current tokens.

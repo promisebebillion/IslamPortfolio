@@ -58,8 +58,6 @@ h1, h2, h3, p { margin: 0; }
 .language-toggle button[aria-pressed="true"] { color: var(--ink); }
 .language-indicator { position: absolute; top: 3px; left: 3px; width: 40px; height: 38px; background: var(--accent); border-radius: 100px; transition: transform .25s cubic-bezier(.22,1,.36,1); }
 .language-toggle[data-language="ru"] .language-indicator { transform: translateX(40px); }
-.hero-background { isolation: isolate; overflow: hidden; }
-.hero-background .floating-paths-layer { z-index: 0; opacity: .12; color: var(--accent); }
 .hero { position: relative; z-index: 1; }
 .hero { padding: 30px 5% 0; overflow: hidden; }
 .hero-topline { display: flex; justify-content: space-between; font-size: 13px; color: #bbc3bf; }

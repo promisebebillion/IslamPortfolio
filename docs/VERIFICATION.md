@@ -74,3 +74,11 @@ Screenshots are in `output/screenshots`. Static deployment is not performed. HTT
 - Production build passes. Browser console returned no errors or warnings during the checks. Local code review removed redundant logo generation and obsolete biography grid overrides; stable keys preserve existing elements when switching language. A safe text-node CV generator preserves URLs and software names.
 - The external 21st review was rejected by automatic approval review because it could disclose source/contact data to an external service. It was not retried through another route; local source review and production compilation were completed instead.
 - Evidence: `output/screenshots/about-photo-en.png` and `hero-ru-320.png`.
+
+## Return-scroll slowdown fix — 10 October 2026
+
+- Removed the animated SVG background, its example component, background CSS and the unused Motion dependency after the user reported the page slowing down on return to the hero. The earlier browser checks had not established the underlying device-specific cause; removing the effect eliminates all 36 continuously animated SVG paths and their restart behavior.
+- Hero previews now keep stable `src` attributes. Visibility and the preview button pause/resume existing video elements instead of unloading their media and loading it again. Posters and `preload="none"` remain in place.
+- Production build passes. The main JS bundle decreased from 426.02 kB / 134.61 kB gzip to 273.80 kB / 84.80 kB gzip.
+- Browser checks at 1440 × 1000 and 390 × 900: four desktop and three mobile trips to the bottom and back. No SVG background nodes remain. At the bottom both desktop previews are paused with readyState 4 and their original sources; after returning both resume playback. The mobile preview also retains its source and readyState 4. No horizontal mobile overflow. Preview pause/resume and opening/closing a project work. A fresh browser tab loads with no console errors or warnings; the earlier development session had one transient hot-reload message when the background component was deleted.
+- Evidence: `output/screenshots/hero-without-paths-desktop.png`. Physical-device performance was not profiled.

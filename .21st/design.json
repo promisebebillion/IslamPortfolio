@@ -8,17 +8,14 @@
       "TypeScript",
       "Vite",
       "Lucide",
-      "Tailwind CSS",
-      "Motion"
+      "Tailwind CSS"
     ]
   },
   "sources": {
     "tokens": [
       "src/styles.css"
     ],
-    "components": [
-      "src/components/ui"
-    ],
+    "components": [],
     "assets": [
       "public/media",
       "src/media.json",
@@ -80,7 +77,7 @@
     "Text reveals once on entering the viewport with a 620ms fade and 20px lift, short stagger delays, and reduced-motion opt-out",
     "English-first EN/RU interface with a persistent language choice and localized printable CV",
     "Client-supplied portrait in the biography, converted from HEIC to WebP",
-    "Subtle FloatingPathsBackground behind the hero with deterministic durations and reduced-motion/visibility/pause controls"
+    "Animated SVG hero paths removed after a return-scroll slowdown report; previews retain stable sources while paused offscreen"
   ],
   "evidence": [],
   "generatedAt": "2026-10-09T15:00:12.381Z"
